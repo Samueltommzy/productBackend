@@ -1,0 +1,28 @@
+{
+  "name": "productbackend",
+  "version": "1.0.0",
+  "description": "A mini product creation app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samueltommzy/productBackend.git"
+  },
+  "author": "Ologunowa Samuel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samueltommzy/productBackend/issues"
+  },
+  "homepage": "https://github.com/Samueltommzy/productBackend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.4.12",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.10"
+  }
+}
