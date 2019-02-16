@@ -9,20 +9,15 @@ let apiRoute       = require('./route/productRoute.js');
 
 let app            = express();
 let http           = require("http").createServer(app)
-let port           = process.env.PORT || 3000;
+const port         = process.env.PORT
 
-mongoose.Promise = global.Promise;
-mongoose.connect(config.database).then((err)=>{
-    if (err) {
-        console.log(err);
-    }
-    console.log("successfully connected to " + config.databaseName);
-});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use('/' , apiRoute);
+
+
 
 http.listen(port,(err)=>{
     if (err) {
@@ -32,6 +27,14 @@ http.listen(port,(err)=>{
         console.log("App running on port " + port)
     }
 })
+
+mongoose.Promise = global.Promise;
+mongoose.connect(config.database).then((err)=>{
+    if (err) {
+        console.log(err);
+    }
+    console.log("successfully connected to " + config.databaseName);
+});
 
 
 

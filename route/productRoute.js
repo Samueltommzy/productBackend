@@ -20,12 +20,12 @@ router.get('/Products', (req,res,next)=>{
 
 router.get('/product/:id', (req,res,next)=>{
     let id = req.params.id
-    Product.findOne({id:id}).exec((err,data)=>{
+    Product.findOne({_id:id}).exec((err,data)=>{
         if (err) {
             return next(err);
         }
         else{
-            return res.send(200).send({
+            return res.status(200).send({
                 status:  200,
                 success: true,
                 message: "loaded product successfully" ,
