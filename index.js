@@ -4,15 +4,12 @@ let morgan         = require('morgan');
 let methodOverride = require('method-override');
 let bodyParser     = require('body-parser');
 let mongoose       = require('mongoose');
-let config         = require('./config/config.js')
+let config         = require('./config/config.js');
+let apiRoute       = require('./route/productRoute.js'); 
 
 let app            = express();
 let http           = require("http").createServer(app)
 let port           = process.env.PORT || 3000;
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(morgan("dev"));
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.database).then((err)=>{
@@ -22,6 +19,11 @@ mongoose.connect(config.database).then((err)=>{
     console.log("successfully connected to " + config.databaseName);
 });
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan("dev"));
+app.use('/' , apiRoute);
+
 http.listen(port,(err)=>{
     if (err) {
         console.log(err);
@@ -30,4 +32,6 @@ http.listen(port,(err)=>{
         console.log("App running on port " + port)
     }
 })
+
+
 
