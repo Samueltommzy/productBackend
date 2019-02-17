@@ -6,12 +6,13 @@ let bodyParser     = require('body-parser');
 let mongoose       = require('mongoose');
 let config         = require('./config/config.js');
 let apiRoute       = require('./route/productRoute.js'); 
-
+let cors           = require('cors');
 let app            = express();
 let http           = require("http").createServer(app)
 const port         = process.env.PORT
 
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
