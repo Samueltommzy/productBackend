@@ -1,7 +1,7 @@
 # productBackend
-##Code for product backend 
+## Code for product backend 
 
-###Steps To test this API on your local machine
+### Steps To test this API on your local machine
 
 *  Clone this repo 
 
@@ -19,12 +19,12 @@
     `curl -X POST --header "Content-Type: application/json" -d '{"Name":"gucci Sneakers","Description":"This is a white Sneakers","Price":"$200","Category":"Men wears",Image":"https://github/Samueltommzy","Color":"White"}' http://localhost:3000/Product`
 * To view a particular product
   - using curl
-    - `curl -H 'Content-Type: application/json' http://localhost:3000/product/_id`
+    `curl -H 'Content-Type: application/json' http://localhost:3000/product/_id`
 
 
-###STeps to test the hosted API
+### Steps to test the hosted API
 
 * To view all the available products visit [Product Backend] (https://product-ch-backend.herokuapp.com/Products)
-*To view a particular product visit `https://product-ch-backend.herokuapp.com/product/_id`
+* To view a particular product visit `https://product-ch-backend.herokuapp.com/product/_id`
     
 
